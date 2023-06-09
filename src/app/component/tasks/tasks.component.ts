@@ -37,8 +37,10 @@ export class TasksComponent implements OnInit {
       this.tasks = task;
      });
   }
-  addTask(task:Task){
-    console.log(task);
+  addTask(task:any){
+    this.taskService.addTask(task).subscribe((tasks)=>{
+      this.tasks = tasks;
+    })
   }
 
   deleteTask(task:Task){
@@ -46,5 +48,7 @@ export class TasksComponent implements OnInit {
     this.tasks = tasks;
    })
   }
+
+
 
 }

@@ -11,6 +11,8 @@ export class AddTaskComponent implements OnInit {
   day!:string
   reminder!:boolean
 
+  task!:Task;
+
   @Output() addTaskEvent:EventEmitter<Task> = new EventEmitter<Task>();
 
   ngOnInit(): void {
@@ -23,13 +25,13 @@ export class AddTaskComponent implements OnInit {
       return;
     }
 
-    const newTask:Task = {
+      this.task= {
       text:this.taskName,
       day:this.day,
       reminder:this.reminder
     }
-    console.log(newTask);
-    this.addTaskEvent.emit(newTask);
+    
+    this.addTaskEvent.emit(this.task);
     this.taskName ='';
     this.reminder = false;
     this.day = '';

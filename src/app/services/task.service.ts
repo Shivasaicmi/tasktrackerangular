@@ -29,4 +29,11 @@ export class TaskService {
     return this.http.patch<Task[]>(this.baseUrl,body);
   }
 
+  addTask(task:Task):Observable<Task[]>{
+    const body = {
+      ...task
+    }
+    return this.http.post<Task[]>(this.baseUrl,body);
+  }
+
 }

@@ -1,5 +1,5 @@
 <div class="tasks-container"  >
-    <app-add-task (addTaskEvent)="addTask(task)" ></app-add-task>
+    <app-add-task (addTaskEvent)="(addTask($event))" ></app-add-task>
     <app-task-item 
     (toggleTaskEvent)="toggleTask(task)"
     (deleteEvent)="deleteTask(task)" 

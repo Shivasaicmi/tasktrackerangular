@@ -29,7 +29,6 @@ export class TaskItemComponent implements OnInit {
 
   onDelete(task:Task){
     this.deleteEvent.emit(task);
-  
   }
 
 }
